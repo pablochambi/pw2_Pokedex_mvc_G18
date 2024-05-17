@@ -27,4 +27,27 @@ class PokedexController
 
         exit();
     }
+
+    public function login()
+    {
+        session_start();
+
+        $usuario = $_POST ['name'];
+        $password = $_POST['password'];
+
+        $usuarioBuscado = $this->model->buscarUsuario($usuario,$password);
+
+        $this->model->iniciarSesion($usuarioBuscado);
+
+
+
+    }
+
+    public function procesarAlta()
+    {
+        $tourName = $_POST["tourName"];
+        $this->model->addTour($tourName);
+        header("location:/tours");
+        exit();
+    }
 }
