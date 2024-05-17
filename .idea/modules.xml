@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../7_mvc/.idea/7_mvc.iml" filepath="$PROJECT_DIR$/../7_mvc/.idea/7_mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pw2-pokedex_Grupo18/.idea/pw2-pokedex.iml" filepath="$PROJECT_DIR$/../pw2-pokedex_Grupo18/.idea/pw2-pokedex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pw2_pokedex_mvc.iml" filepath="$PROJECT_DIR$/.idea/pw2_pokedex_mvc.iml" />
+    </modules>
+  </component>
+</project>

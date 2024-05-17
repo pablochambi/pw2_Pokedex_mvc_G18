@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header img{
+    width: 2rem;
+    height: 2rem;
+}
+button{
+    height: auto;
+    width: auto;
+    border-radius: 0.8rem;
+    background-color: #ff7f50; /* Orange */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e56f44; /* Darker orange */
+  }
+
+body{
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    max-width: 100%;
+    max-height: 100%;
+}
+main {
+    height: auto;
+}
+
+
+
+.form_modificacion_pokemon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor_de_cartas_modificaion_pokemon{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.carta_modificacion_pokemon{
+    display: inline-block;
+    width: 370px;
+}
+.form_modificacion_pok{
+    display: grid;
+    justify-items: center;
+}
+

@@ -1,0 +1,109 @@
+main{
+    height: auto;
+    width: 98%;
+    margin-left: 10px;
+}
+
+main .contenedor-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.card {
+    /* Propiedades para el estado normal */
+    position: relative; /* Permite posicionar elementos encima del card */
+    width: 350px; /* Ajusta el ancho de la card */
+    height: 300px; /* Ajusta la altura de la card */
+    margin: 20px; /* Agrega espacio alrededor de las cards */
+    border: 1px solid rgba(253,187,45,1); /* Agrega un borde a la card */
+    overflow: hidden; /* Oculta el contenido que se desborde */
+    transition: transform 0.5s ease; /* Define una transición suave para el cambio de transformación */
+  }
+  
+  .card:hover {
+    /* Propiedades para el estado hover */
+    transform: scale(1.1); /* Aumenta el tamaño de la card al pasar el mouse por encima */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el mouse por encima */
+  }
+  
+  .card img:first-child {
+    /* Propiedades para la imagen principal */
+    width: 100%; /* Ocupa todo el ancho de la card */
+    height: 100%; /* Ajusta la altura de la imagen principal */
+    object-fit: fill; /* Mantiene la proporción de la imagen y la cubre completamente */
+  }
+  
+  .card section {
+    /* Propiedades para la sección */
+    position: absolute; /* Posiciona la sección en una posición relativa */
+    bottom: 0; /* Ubica la sección en la parte inferior de la card */
+    left: 0; /* Ubica la sección en el borde izquierdo de la card */
+    width: 100%; /* Ocupa todo el ancho de la card */
+    padding: 20px; /* Agrega espacio interno a la sección */
+    background-color: #dfd114; /* Define el color de fondo de la sección */
+    opacity: 0; /* Oculta la sección por defecto */
+    transition: opacity 0.5s ease; /* Define una transición suave para la opacidad */
+  }
+  
+  .card:hover section {
+    /* Propiedades para la sección en hover */
+    opacity: 1; /* Muestra la sección al pasar el mouse por encima */
+  }
+  
+  .card .escondible {
+    /* Propiedades para los elementos escondidos */
+    display: none; /* Oculta los elementos por defecto */
+    position: absolute; /* Posiciona los elementos en una posición relativa */
+    left: 20px; /* Ubica los elementos a 20px del borde izquierdo */
+    top: 10px; /* Ubica los elementos a 10px del borde superior */
+    transition: transform 0.5s ease; /* Define una transición suave para la transformación */
+  }
+  
+  .card:hover .escondible {
+    /* Propiedades para los elementos escondidos en hover */
+    transform: translateX(-desplazamiento); /* Mueve los elementos hacia la izquierda */
+    opacity: 1; /* Muestra los elementos al pasar el mouse por encima */
+    display: inline;
+  }
+  
+  .card .escondible:nth-child(2) {
+    /* Propiedades para el segundo elemento escondido */
+    top: 30px; /* Ubica el segundo elemento a 30px del borde superior */
+  }
+  
+  .card .escondible:nth-child(3) {
+    /* Propiedades para el tercer elemento escondido */
+    top: 50px; /* Ubica el tercer elemento a 50px del borde superior */
+  }
+  
+  .card .escondible:nth-child(4) {
+    /* Propiedades para el cuarto elemento escondido */
+    top: 70px; /* Ubica el cuarto elemento a 70px del borde superior */
+  }
+  
+  .card section button {
+    /* Propiedades para los botones dentro de la sección */
+    margin: 10px; /* Agrega espacio entre los botones */
+  }
+
+/********************** ESTILOS de la TABLAS ***************************/
+table {
+    width: 100%; /* Ancho de la tabla al 100% del contenedor */
+    border-collapse: collapse; /* Fusionar bordes de celdas */
+    text-align: center; /* Centrar texto en todas las celdas */
+}
+th, td {
+    padding: 8px; /* Añadir espacio de relleno a las celdas */
+    border: 1px solid #ddd; /* Añadir bordes a las celdas */
+}
+img {
+    max-width: 100px; /* Limitar el ancho máximo de las imágenes */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+}
+
+

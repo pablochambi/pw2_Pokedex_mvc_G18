@@ -1,0 +1,113 @@
+header{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 10%;
+    margin: 3px;
+    padding: 1rem;
+}
+
+
+
+
+.header-form{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    height: 100%;
+    width: 97%;
+}
+.cerrar-sesion {
+    //quiero que se vea mas grande el boton
+    font-size: 1.5rem;
+    //quiero que el boton se vea mas grande
+    padding: 0.5rem 1rem;
+
+}
+
+header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header input{
+    height: 45%;
+    max-width: fit-content;
+    margin-top: 1.6rem;
+    border: none;
+    border-radius: 15px;
+}
+
+header button{
+    margin-top: 1rem;
+}
+@media (max-width: 991px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    .header-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-form input[type="text"],
+    .header-form input[type="password"],
+    .header-form button {
+        width: 18vh;
+        margin-top: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        margin-bottom: 1rem; /* Espacio entre logo y formulario en pantallas pequeñas */
+    }
+
+    .logo img {
+        max-width: 80px; /* Cambia el tamaño del logo en pantallas pequeñas */
+    }
+
+    .header-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-form input[type="text"],
+    .header-form input[type="password"],
+    .header-form button {
+        width: 10vh;
+        margin-top: 0.5rem;
+
+    }
+
+    .header-form button {
+        margin-top: 0.5rem;
+    }
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+
+}
+
