@@ -30,17 +30,12 @@ class PokedexController
 
     public function login()
     {
-        session_start();
+        $usuario = $_POST ["name"];
+        $password = $_POST["password"];
 
-        $usuario = $_POST ['name'];
-        $password = $_POST['password'];
+        $resultado = $this->model->buscarUsuario($usuario,$password);
 
-        $usuarioBuscado = $this->model->buscarUsuario($usuario,$password);
-
-        $this->model->iniciarSesion($usuarioBuscado);
-
-
-
+        $this->model->iniciarSesion($resultado,$usuario);
     }
 
     public function procesarAlta()

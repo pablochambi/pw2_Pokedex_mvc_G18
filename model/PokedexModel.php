@@ -19,18 +19,19 @@ class PokedexModel
 
     public function buscarUsuario($usuario,$password)
     {
-        return $this->database->query("SELECT * FROM usuario WHERE name = '$usuario' AND password = '$password'");
+        return $this->database->executeAndReturn("SELECT * FROM usuario WHERE name = '$usuario' AND password = '$password'");
     }
 
 
-    public function iniciarSesion($usuario)
+    public function iniciarSesion($resultado,$usuario)
     {
-        if(isset($usuario)){
-            $_SESSION['name'] = $usuario;
-            header('Location: homeUsuario');
+        if (mysqli_num_rows($resultado) == 1) {
+            session_start();
+            $_SESSION["name"] = $usuario;
+            header("Location: /homeUsuario");
             exit();
-        }else{
-            header('Location: pokedex');
+        } else {
+            header("Location: /pokedex");
             exit();
         }
     }

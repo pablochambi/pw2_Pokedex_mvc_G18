@@ -1,6 +1,5 @@
 <?php
-
-class SongsController
+class HomeUsuarioController
 {
     private $model;
     private $presenter;
@@ -13,7 +12,9 @@ class SongsController
 
     public function get()
     {
-        $canciones = $this->model->getSongs();
-        $this->presenter->render("view/songsView.mustache", ["canciones" => $canciones]);
+        $pokemones = $this->model->getPokemones();//buscar en la base de datos pokemones
+        $this->presenter->render("view/HomeUsuarioView.mustache", ["pokemon" => $pokemones]);
     }
+
+
 }

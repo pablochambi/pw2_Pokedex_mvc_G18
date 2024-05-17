@@ -1,0 +1,41 @@
+
+<aside>
+    <form action="/pokedex/procesarBusqueda" method="GET">
+        <input type="text"  name="busqueda" placeholder="Ingrese nombre, tipo o número de Pokemón">
+        <button>Buscar</button>
+    </form>
+</aside>
+
+<section>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Tipo</th>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Mas info</th>
+            <th>Acciones</th>
+        </tr>
+        {{#pokemon}}
+        <tr>
+
+            <td> <img src="{{imagen}}"  width="150px"> </td>
+            <td> <img src="{{tipo1}}"  width="150px"> </td>
+            <td>{{numero_id}}</td>
+            <td>{{nombre}}</td>
+            <td> <a href="/pokedex/info_pokedex?id={{id}}">Mas info</a> </td>
+            <td>
+                <button type='submit' class='btn btn-primary'>
+                    <a href="pokedex/modificarPokemon?id={{id}}" style="color: white">Modificar</a>
+                </button>
+                <button type='submit' class='btn btn btn-danger'>
+                    <a href="pokedex/eliminarPokemon?id={{id}}" style="color: white">Eliminar</a>
+                </button>
+            </td>
+        </tr>
+        {{/pokemon}}
+    </table>
+    <button type='button' class='btn btn-success'>
+        <a href='/pokedex/nuevoPokemon' style='color: white' > Nuevo Pokemon </a>
+    </button>
+</section>

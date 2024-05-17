@@ -1,12 +1,10 @@
 <?php
-include_once ("controller/SongsController.php");
-include_once ("controller/ToursController.php");
-include_once ("controller/LaBandaController.php");
-include_once ("controller/PokedexController.php");
 
-include_once ("model/SongsModel.php");
-include_once ("model/ToursModel.php");
+include_once ("controller/PokedexController.php");
+include_once("controller/HomeUsuarioController.php");
+
 include_once ("model/PokedexModel.php");
+include_once ("model/HomeUsuarioModel.php");
 
 include_once ("helper/Database.php");
 include_once ("helper/Router.php");
@@ -20,40 +18,26 @@ class Configuration
 {
 
     // CONTROLLERS
-    public static function getLaBandaController()
-    {
-        return new LaBandaController(self::getPresenter());
-    }
-
     public static function getPokedexController()
     {
         return new PokedexController(self::getPokedexModel(), self::getPresenter());
     }
 
-    public static function getToursController()
+    public static function getHomeUsuarioController()
     {
-        return new ToursController(self::getToursModel(), self::getPresenter());
-    }
-
-    public static function getSongsController()
-    {
-        return new SongsController(self::getSongsModel(), self::getPresenter());
+        return new HomeUsuarioController(self::getHomeUsuarioModel(), self::getPresenter());
     }
 
     // MODELS
-    private static function getToursModel()
-    {
-        return new ToursModel(self::getDatabase());
-    }
 
     private static function getPokedexModel()
     {
         return new PokedexModel(self::getDatabase());
     }
 
-    private static function getSongsModel()
+    private static function getHomeUsuarioModel()
     {
-        return new SongsModel(self::getDatabase());
+        return new HomeUsuarioModel(self::getDatabase());
     }
 
 
@@ -80,5 +64,7 @@ class Configuration
     {
         return new MustachePresenter("view/template");
     }
+
+
 
 }
