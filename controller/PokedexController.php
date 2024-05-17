@@ -13,17 +13,18 @@ class PokedexController
 
     public function get()
     {
-        $pokemones = $this->model->getPokemones();
-        $this->model->getPokemones();
+        $pokemones = $this->model->getPokemones();//buscar en la base de datos pokemones
         $this->presenter->render("view/PokedexView.mustache", ["pokemon" => $pokemones]);
     }
 
     public function info_pokedex()
     {
         $id = $_GET["id"];
-        echo "$id";
-        //$this->model->buscarPokemon($id);
-       // header("location:/tours");
+
+        $pokemonEncontrado = $this->model->buscarPokemon($id);
+
+        $this->presenter->render("view/InfoPokemonView.mustache", ["pokemon" => $pokemonEncontrado]);
+
         exit();
     }
 }

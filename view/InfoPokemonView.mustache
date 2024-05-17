@@ -1,0 +1,40 @@
+<div class="row">
+    {{#pokemon}}
+    <div class="col-5 ">
+
+        <div class="row containerImg">
+            <img src="/public/{{imagen}}" width="300" height="300" >
+        </div>
+
+        <div class="row containerimgTipo">
+
+            <div class="col">
+                <img  class='tipo1'   src="/public/{{tipo1}}"  width="300" height="300" >
+            </div>
+
+            <div class="col">
+                <img class='color' src="/public/{{tipo2}}" >
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-7 ">
+        <div class="row">
+            <a class="navbar-brand" href="#">
+                <img src="/public/imagenes/logo/logo-pokedex.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                {{nombre}}
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col info-content">
+                {{descripcion}}
+            </div>
+        </div>
+
+    </div>
+
+    {{/pokemon}}
+
+</div>

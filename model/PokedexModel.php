@@ -12,8 +12,8 @@ class PokedexModel
         return $this->database->query("SELECT * FROM pokemon");
     }
 
-    public function getImagenesPokemones()
+    public function buscarPokemon($id)
     {
-        return "/";
+        return $this->database->query("SELECT * FROM pokemon WHERE id = $id");
     }
 }
