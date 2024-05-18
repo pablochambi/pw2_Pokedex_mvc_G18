@@ -30,17 +30,21 @@ class PokedexController
 
     public function login()
     {
-        $usuario = $_POST ["name"];
+        $usuario = $_POST["name"];
         $password = $_POST["password"];
 
-        $this->model->iniciarSesion($usuario,$password);
+        $resultado = $this->model->iniciarSesion($usuario,$password);
+
+        if($resultado == 1){
+            header("Location:/homeUsuario");
+            exit();
+        }
+
+        if($resultado == 0 || $resultado == 2 || $resultado == 3 ){
+            header("Location:/pokedex");
+            exit();
+        }
+
     }
 
-    public function procesarAlta()
-    {
-        $tourName = $_POST["tourName"];
-        $this->model->addTour($tourName);
-        header("location:/tours");
-        exit();
-    }
 }

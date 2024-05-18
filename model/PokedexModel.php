@@ -25,7 +25,7 @@ class PokedexModel
 
     public function iniciarSesion($usuario,$password)
     {
-        session_start();
+        $seInicioSesion = 0;
         if(isset($usuario) && isset($password)){
 
             $resultado = $this->buscarUsuario($usuario,$password);
@@ -33,16 +33,16 @@ class PokedexModel
             if ($this->seEncontroUnResultado($resultado)) {
 
                 $_SESSION["name"] = $usuario;
-                header("Location: /homeUsuario");
-                exit();
+                $seInicioSesion = 1; //se inicio sesion
 
             } else {
-                header("Location: /pokedex");
-                exit();
+                $seInicioSesion = 2; //no se encontro en la base de datos
             }
         }else{
-            header("Location: /pokedex");
+            $seInicioSesion = 3; // se dejo por lo menos un campo vacio
         }
+
+        return $seInicioSesion;
     }
 
     private function seEncontroUnResultado($resultado){

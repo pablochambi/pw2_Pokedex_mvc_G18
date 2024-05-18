@@ -2,25 +2,30 @@
 class HomeUsuarioController
 {
     private $model;
-    private $presenter;
+    private $presenterHome;
 
-    public function __construct($model, $presenter)
+    public function __construct($model, $presenterHome)
     {
         $this->model = $model;
-        $this->presenter = $presenter;
+        $this->presenterHome = $presenterHome;
     }
 
     public function get()
     {
         session_start();
-        $pokemones = $this->model->getPokemones();//buscar en la base de datos pokemones
+        $pokemones = $this->model->getPokemones();
+        
+        $nombreUsuario = $this->model->verificarSiHayUnaSessionIniciada($_SESSION["name"]);
 
-        if(isset($_SESSION["name"])){
-            $this->presenter->render("view/HomeUsuarioView.mustache", ["pokemon" => $pokemones]);
+        if($nombreUsuario){
+            // Renderizar la plantilla y pasar los datos
+            $this->presenterHome->renderHome("view/HomeUsuarioView.mustache", ["name" => $nombreUsuario, "pokemon" => $pokemones]);
         }else{
             header("Location:/pokedex");
         }
+
     }
+
 
 
 }
