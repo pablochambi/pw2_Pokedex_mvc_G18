@@ -30,6 +30,8 @@ class PokedexController
 
     public function login()
     {
+        session_start();
+
         $usuario = $_POST["name"];
         $password = $_POST["password"];
 
@@ -46,5 +48,6 @@ class PokedexController
         }
 
     }
+
 
 }

@@ -14,7 +14,7 @@ class HomeUsuarioController
     {
         session_start();
         $pokemones = $this->model->getPokemones();
-        
+
         $nombreUsuario = $this->model->verificarSiHayUnaSessionIniciada($_SESSION["name"]);
 
         if($nombreUsuario){
@@ -26,6 +26,14 @@ class HomeUsuarioController
 
     }
 
+    public function logout()
+    {
+        session_start();
+
+        session_destroy();
+
+        header('Location: index.php');
+    }
 
 
 }
