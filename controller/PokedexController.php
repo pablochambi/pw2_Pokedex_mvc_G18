@@ -33,9 +33,7 @@ class PokedexController
         $usuario = $_POST ["name"];
         $password = $_POST["password"];
 
-        $resultado = $this->model->buscarUsuario($usuario,$password);
-
-        $this->model->iniciarSesion($resultado,$usuario);
+        $this->model->iniciarSesion($usuario,$password);
     }
 
     public function procesarAlta()

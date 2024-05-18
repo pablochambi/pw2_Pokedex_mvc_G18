@@ -23,10 +23,13 @@ class PokedexModel
     }
 
 
-    public function iniciarSesion($resultado,$usuario)
+    public function iniciarSesion($usuario,$password)
     {
+        session_start();
+        $resultado = $this->buscarUsuario($usuario,$password);
+
         if (mysqli_num_rows($resultado) == 1) {
-            session_start();
+
             $_SESSION["name"] = $usuario;
             header("Location: /homeUsuario");
             exit();
