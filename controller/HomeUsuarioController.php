@@ -12,8 +12,14 @@ class HomeUsuarioController
 
     public function get()
     {
+        session_start();
         $pokemones = $this->model->getPokemones();//buscar en la base de datos pokemones
-        $this->presenter->render("view/HomeUsuarioView.mustache", ["pokemon" => $pokemones]);
+
+        if(isset($_SESSION["name"])){
+            $this->presenter->render("view/HomeUsuarioView.mustache", ["pokemon" => $pokemones]);
+        }else{
+            header("Location:/pokedex");
+        }
     }
 
 
