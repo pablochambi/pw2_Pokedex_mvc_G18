@@ -48,18 +48,6 @@ class PokedexController
         }
 
     }
-    public function crearPokemon(){
-        $this->presenter->render("view/crearPokemon.mustache");
-    }
-
-    public function guardarPokemon() {
-        list($numero_id, $imagen_nombre, $nombre, $tipo1, $tipo2, $observaciones) = $this->obtenerDatosAGuardar();
-
-        $this->model->guardarPokemon($numero_id, $imagen_nombre, $nombre, $tipo1, $tipo2, $observaciones);
-
-        header("Location: /homeUsuario");
-
-    }
 
     public function buscarPokemon(){
 
@@ -81,28 +69,7 @@ class PokedexController
 
 
 
-    private function obtenerDatosAGuardar(): array
-    {
-        if (isset($_POST['numero_id']) && isset($_FILES['imagen']) && isset($_POST['nombre'])
-            && isset($_POST['tipo1']) && isset($_POST['tipo2']) && isset($_POST['descripcion'])) {
-            $numero_id = $_POST['numero_id'];
-            $imagen_nombre = pathinfo($_FILES['imagen']['name'], PATHINFO_FILENAME);
-            $imagen_extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
-            $nombre = $_POST['nombre'];
-            $tipo1 = $_POST['tipo1'];
-            $tipo2 = $_POST['tipo2'];
-            $observaciones = $_POST['descripcion'];
 
-            $ruta_temporal_imagen = $_FILES['imagen']['tmp_name'];
-
-            $nuevo_nombre_imagen = $imagen_nombre . '.' . $imagen_extension;
-
-            $ruta_final_imagen = "public/imagenes/{$nuevo_nombre_imagen}";
-
-            move_uploaded_file($ruta_temporal_imagen, $ruta_final_imagen);
-        }
-        return array($numero_id, $imagen_nombre, $nombre, $tipo1, $tipo2, $observaciones);
-    }
 
 
 }
