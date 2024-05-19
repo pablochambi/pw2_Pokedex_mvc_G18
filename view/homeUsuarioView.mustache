@@ -1,6 +1,6 @@
 
 <aside>
-    <form action="/pokedex/procesarBusqueda" method="GET">
+    <form action="/pokedex/buscarPokemon" method="GET">
         <input type="text"  name="busqueda" placeholder="Ingrese nombre, tipo o número de Pokemón">
         <button>Buscar</button>
     </form>
@@ -19,8 +19,8 @@
         {{#pokemon}}
         <tr>
 
-            <td> <img src="{{imagen}}"  width="150px"> </td>
-            <td> <img src="{{tipo1}}"  width="150px"> </td>
+            <td> <img src="/{{imagen}}"  width="150px"> </td>
+            <td> <img src="/{{tipo1}}"  width="150px"> </td>
             <td>{{numero_id}}</td>
             <td>{{nombre}}</td>
             <td> <a href="/pokedex/info_pokedex?id={{id}}">Mas info</a> </td>
@@ -36,6 +36,6 @@
         {{/pokemon}}
     </table>
     <button type='button' class='btn btn-success'>
-        <a href='/pokedex/nuevoPokemon' style='color: white' > Nuevo Pokemon </a>
+        <a href='/pokedex/crearPokemon' style='color: white' > Nuevo Pokemon </a>
     </button>
 </section>
