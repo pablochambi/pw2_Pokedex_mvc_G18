@@ -1,4 +1,3 @@
-
 <aside>
     <form action="/homeUsuario/buscarPokemon" method="GET">
         <input type="text"  name="busqueda" placeholder="Ingrese nombre, tipo o número de Pokemón">
@@ -18,24 +17,23 @@
         </tr>
         {{#pokemon}}
         <tr>
-
             <td> <img src="/{{imagen}}"  width="150px"> </td>
             <td> <img src="/{{tipo1}}"  width="150px"> </td>
             <td>{{numero_id}}</td>
             <td>{{nombre}}</td>
-            <td> <a href="/pokedex/info_pokedex?id={{id}}">Mas info</a> </td>
+            <td> <a href="/homeUsuario/info_pokedex?id={{id}}">Mas info</a> </td>
             <td>
                 <button type='submit' class='btn btn-primary'>
-                    <a href="pokedex/modificarPokemon?id={{id}}" style="color: white">Modificar</a>
+                    <a href="homeUsuario/modificarPokemon?id={{id}}" style="color: white">Modificar</a>
                 </button>
                 <button type='submit' class='btn btn btn-danger'>
-                    <a href="pokedex/eliminarPokemon?id={{id}}" style="color: white">Eliminar</a>
+                    <a href="homeUsuario/eliminarPokemon?id={{id}}" style="color: white">Eliminar</a>
                 </button>
             </td>
         </tr>
         {{/pokemon}}
     </table>
     <button type='button' class='btn btn-success'>
-        <a href='/pokedex/crearPokemon' style='color: white' > Nuevo Pokemon </a>
+        <a href='/homeUsuario/crearPokemon' style='color: white' > Nuevo Pokemon </a>
     </button>
 </section>
