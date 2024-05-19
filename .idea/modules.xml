@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../7_mvc/.idea/7_mvc.iml" filepath="$PROJECT_DIR$/../7_mvc/.idea/7_mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ProgWeb2/.idea/ProgWeb2.iml" filepath="$PROJECT_DIR$/../ProgWeb2/.idea/ProgWeb2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../pw2-pokedex_Grupo18/.idea/pw2-pokedex.iml" filepath="$PROJECT_DIR$/../pw2-pokedex_Grupo18/.idea/pw2-pokedex.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pw2_pokedex_mvc.iml" filepath="$PROJECT_DIR$/.idea/pw2_pokedex_mvc.iml" />
     </modules>

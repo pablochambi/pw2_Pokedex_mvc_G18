@@ -66,15 +66,9 @@ class PokedexModel
         if (!empty($busqueda)) {
             $sql .= " WHERE nombre LIKE '%$busqueda%'";
         }
-
         return $this->database->executeAndReturn($sql);
-
     }
 
-
-
-
-    
     private function construirLaConsultaSQL($tipo1, $tipo2, $numero_id, string $imagenRef, $nombre, string $tipo1Ref, $descripcion, string $tipo2Ref): string
     {
         if ($tipo1 === $tipo2) {
@@ -91,7 +85,6 @@ class PokedexModel
             move_uploaded_file($_FILES["imagen"]["tmp_name"], "imagenes/{$imagen_nombre}.png");
         }
     }
-
 
     private function seEncontroUnResultado($resultado){
         return mysqli_num_rows($resultado) == 1;

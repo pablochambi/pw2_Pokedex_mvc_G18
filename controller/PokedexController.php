@@ -55,8 +55,6 @@ class PokedexController
     public function guardarPokemon() {
         list($numero_id, $imagen_nombre, $nombre, $tipo1, $tipo2, $observaciones) = $this->obtenerDatosAGuardar();
 
-
-
         $this->model->guardarPokemon($numero_id, $imagen_nombre, $nombre, $tipo1, $tipo2, $observaciones);
 
         header("Location: /homeUsuario");
@@ -65,7 +63,6 @@ class PokedexController
 
     public function buscarPokemon(){
 
-        
         $usuarioLogeado = isset($_SESSION["name"]);
 
         $busqueda = isset($_GET['busqueda']) ? $_GET['busqueda'] : '';

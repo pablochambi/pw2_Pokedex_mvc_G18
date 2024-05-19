@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="7_mvc" />
     <orderEntry type="module" module-name="pw2-pokedex" />
+    <orderEntry type="module" module-name="ProgWeb2" />
   </component>
 </module>
