@@ -21,7 +21,7 @@ class PokedexController
     {
         $id = $_GET["id"];
 
-        $pokemonEncontrado = $this->model->buscarPokemon($id);
+        $pokemonEncontrado = $this->model->buscarPokemonPorId($id);
 
         $this->presenter->render("view/InfoPokemonView.mustache", ["pokemon" => $pokemonEncontrado]);
 

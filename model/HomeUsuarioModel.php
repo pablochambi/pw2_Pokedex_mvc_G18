@@ -11,11 +11,11 @@ class HomeUsuarioModel
         return $this->database->query("SELECT * FROM pokemon");
     }
 
-   /* public function buscarPokemon($id)
+    public function buscarPokemonPorId($id)
     {
         return $this->database->query("SELECT * FROM pokemon WHERE id = $id");
     }
-*/
+
 
     public function verificarSiHayUnaSessionIniciada($session){
         return isset($session) ? $session : null;

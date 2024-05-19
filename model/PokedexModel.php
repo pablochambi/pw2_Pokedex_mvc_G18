@@ -12,11 +12,11 @@ class PokedexModel
         return $this->database->query("SELECT * FROM pokemon");
     }
 
-   /* public function buscarPokemon($id)
+    public function buscarPokemonPorId($id)
     {
         return $this->database->query("SELECT * FROM pokemon WHERE id = $id");
     }
-    */
+
 
     public function buscarUsuario($usuario,$password)
     {

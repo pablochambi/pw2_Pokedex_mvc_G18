@@ -26,6 +26,7 @@ class HomeUsuarioController
 
     }
 
+
     public function logout()
     {
         session_start();
@@ -33,6 +34,17 @@ class HomeUsuarioController
         session_destroy();
 
         header('Location: index.php');
+    }
+
+    public function info_pokedex()
+    {
+        $id = $_GET["id"];
+
+        $pokemonEncontrado = $this->model->buscarPokemon($id);
+
+        $this->presenter->render("view/InfoPokemonView.mustache", ["pokemon" => $pokemonEncontrado]);
+
+        exit();
     }
 
 
