@@ -38,14 +38,9 @@ class HomeUsuarioController
         $direccionTipo2 = $pokemonBuscado["tipo2"];
         $descripcion = $pokemonBuscado["descripcion"];
 
-        $explode1 = explode("/", $direccionTipo1);
-        $explode2 = explode("/", $direccionTipo2);
+        $tipo1 = $this->pasarDeDireccionDeRutaANombreDeImagen($direccionTipo1);
+        $tipo2 = $this->pasarDeDireccionDeRutaANombreDeImagen($direccionTipo2);
 
-        $tipo1png = end($explode1);
-        $tipo2png = end($explode2);
-
-        $tipo1 = basename($tipo1png,".png");
-        $tipo2 = basename($tipo2png,".png");
 
         $pokemonBuscado = [
             "id" => $id,
@@ -67,7 +62,15 @@ class HomeUsuarioController
         }
 
     }
+    private function pasarDeDireccionDeRutaANombreDeImagen($direccion)
+    {
+        $explode = explode("/", $direccion);
 
+        $nombrePng = end($explode);
+
+        return basename($nombrePng,".png");
+
+    }
 
     public function procesarModificacionPokemon(){
 
@@ -207,6 +210,8 @@ class HomeUsuarioController
         header("Location: /homeUsuario");
 
     }
+
+
 
 
 }
