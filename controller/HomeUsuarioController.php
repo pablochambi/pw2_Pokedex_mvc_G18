@@ -99,10 +99,6 @@ class HomeUsuarioController
                 die("<script>alert('La imagen debe ser un archivo PNG'); window.location.href = '/homeUsuario'</script>");
             }
 
-            // Verificar si el número ID ya existe en la base de datos
-
-            // Mover la imagen cargada al directorio de imágenes
-
             $imagen_nombre = pathinfo($imagen['name'], PATHINFO_FILENAME);
             $imagen_destino = "/public/imagenes/{$imagen_nombre}.png";
             move_uploaded_file($imagen['tmp_name'], $imagen_destino);
@@ -200,6 +196,16 @@ class HomeUsuarioController
         }else{
             header("Location:/pokedex");
         }
+    }
+
+    public function eliminarPokemon()
+
+    {
+        $idObtenido = isset($_GET['id']) ? $_GET['id'] : '';
+        $this->model->eliminarPokemon($idObtenido);
+
+        header("Location: /homeUsuario");
+
     }
 
 

@@ -69,6 +69,12 @@ class HomeUsuarioModel
         return $query_result;
     }
 
+    public function eliminarPokemon($id)
+    {
+        $sql = "delete from pokemon where id = $id";
+        return $this->database->execute($sql);
+    }
+
     private function construirLaConsultaSQL($tipo1, $tipo2, $numero_id, string $imagenRef, $nombre, string $tipo1Ref, $descripcion, string $tipo2Ref): string
     {
         if ($tipo1 === $tipo2) {
