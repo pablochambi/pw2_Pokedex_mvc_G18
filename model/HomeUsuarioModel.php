@@ -13,8 +13,30 @@ class HomeUsuarioModel
 
     public function buscarPokemonPorId($id)
     {
-        return $this->database->query("SELECT * FROM pokemon WHERE id = $id");
+        return  $this->database->query("SELECT * FROM pokemon WHERE id = $id");
     }
+
+    public function buscarUnPokemonPorIdYRetornarSusDatosEnUnArray($id) : array
+    {
+        return  $this->database->obtenerUnArrayConLosDatosDeUnPokemonPorId("SELECT * FROM pokemon WHERE id = $id");
+    }
+
+    public function actualizarLosDatosDeUnPokemonPorId($id,$numero_id,$nombre,$imagen_destino,$tipo1Ref,$tipo2Ref,$descripcion)
+    {
+        $actualizacion = "UPDATE pokemon SET 
+              numero_id = '$numero_id',
+              nombre = '$nombre', 
+              imagen = '$imagen_destino',
+              tipo1 = '$tipo1Ref',  
+              tipo2 = '$tipo2Ref', 
+              descripcion = '$descripcion'
+              WHERE id = '$id'";
+
+        return  $this->database->executeAndReturn($actualizacion);
+
+    }
+
+
 
 
     public function verificarSiHayUnaSessionIniciada($session){

@@ -1,0 +1,61 @@
+<section>
+    <form class="m-5 form_modificacion_pok" id="nuevoPokemonForm" action="/homeUsuario/procesarModificacionPokemon" method="post" enctype="multipart/form-data">
+        {{#pokemon}}
+        <article class="contenedor_de_cartas_modificaion_pokemon">
+            <div class="carta_modificacion_pokemon">
+                <div>
+                    <label for="numero_id"> Numero identificador</label>
+                    <input type="number" class="form-control" id="numero_id" name="numero_id" value="{{numero}}">
+                </div>
+
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{nombre}}">
+                </div>
+                <div>
+                    <label for="imagen">Imagen</label>
+                    <img src="/{{direccionImagen}}" alt="Imagen predeterminada" width="50">
+                    <input type="file" class="form-control-file" id="imagen" name="imagen">
+                    <input type="hidden" name="direccionImagenPorDefecto" value="{{direccionImagen}}">
+                </div>
+            </div>
+
+
+            <div class="carta_modificacion_pokemon" >
+                <div>
+                    <label for="Tipo">Tipo de pokemon 1</label>
+                    <select class="form-control" id="tipo1" name="tipo1">
+                        <option value="{{tipo1}}" selected><{{tipo1}}></option>
+                        <option value="agua">Agua</option>
+                        <option value="fuego">Fuego</option>
+                        <option value="planta">Planta</option>
+                        <option value="bicho">Bicho</option>
+                        <option value="veneno">Veneno</option>
+                        <option value="volador">Volador</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Tipo">Tipo de pokemon 2</label>
+                    <select class="form-control" id="tipo2" name="tipo2">
+                        <option value="{{tipo2}}" selected>{{tipo2}}</option>
+                        <option value="agua">Agua</option>
+                        <option value="fuego">Fuego</option>
+                        <option value="planta">Planta</option>
+                        <option value="bicho">Bicho</option>
+                        <option value="veneno">Veneno</option>
+                        <option value="volador">Volador</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="descripcion">Descripcion</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion">{{descripcion}}</textarea>
+                </div>
+            </div>
+        </article>
+        <input type="hidden" name="id" value="{{id}}">
+        <button type="submit" class="btn btn-primary mt-3"> Actualizar pokemon </button>
+        <br>
+        <a href="/homeUsuario" >Volver</a>
+        {{/pokemon}}
+    </form>
+</section>

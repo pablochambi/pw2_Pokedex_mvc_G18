@@ -28,6 +28,28 @@ class Database
        return mysqli_query($this->conn, $sql);
     }
 
+    public function obtenerUnArrayConLosDatosDeUnPokemonPorId($query) :array
+    {
+        $pokemonBuscado = mysqli_query($this->conn, $query);
+
+        if ($pokemonBuscado) {
+            // Verificar si se encontró algún resultado
+            if (mysqli_num_rows($pokemonBuscado) > 0) {
+                // Obtener la fila como un array asociativo
+                return mysqli_fetch_assoc($pokemonBuscado);
+            } else {
+                echo "No se encontró ningún Pokémon con el ID";
+                return [];
+            }
+        } else {
+            // Ocurrió un error en la consulta
+            echo "Error al ejecutar la consulta: " . mysqli_error($this->conn);
+            return [];
+        }
+
+    }
+
+
     public function __destruct()
     {
         mysqli_close($this->conn);
